@@ -95,37 +95,53 @@ const testimonials = [
 
 const pricingPlans = [
   {
-    title: "Starter Landing",
-    price: "Mulai 5,5jt",
-    idealFor: "Campaign iklan tunggal",
+    title: "Landing Page",
+    price: "Rp 699K",
+    subtitle: "one-time",
+    idealFor: "Solusi website landing page profesional untuk bisnis Anda",
     features: [
-      "1 halaman landing responsif",
-      "Copywriting conversion-based",
-      "Integrasi WhatsApp & email",
-      "Setup Google Analytics & Tag Manager",
+      "Desain Modern & Responsif",
+      "Optimasi SEO On-Page",
+      "Form Contact & WhatsApp",
+      "Integrasi Google Analytics",
+      "Integrasi Social Media",
+      "SSL Security (HTTPS)",
+      "Speed Optimization",
+      "Free Domain .com",
     ],
   },
   {
-    title: "Growth Company",
-    price: "Mulai 12jt",
-    idealFor: "Brand yang butuh profil lengkap",
+    title: "Company Profile",
+    price: "Rp 1.999K",
+    subtitle: "one-time",
+    idealFor: "Website company profile lengkap untuk perusahaan",
     features: [
-      "Sampai 6 halaman dinamis",
-      "CMS ringan via Supabase",
-      "Form lead scoring",
-      "Komponen blog & portofolio",
+      "Desain Premium & Responsif",
+      "Full SEO Optimization",
+      "CMS Admin Panel",
+      "Blog/News System",
+      "Form Contact & WhatsApp",
+      "Google Maps Integration",
+      "Google Analytics & Search Console",
+      "Social Media Integration",
     ],
     highlighted: true,
+    badge: "MOST POPULAR",
   },
   {
-    title: "Custom CRUD",
-    price: "Mulai 22jt",
-    idealFor: "Operasional internal",
+    title: "Custom Website",
+    price: "Rp 2.999K",
+    subtitle: "starts from",
+    idealFor: "Solusi website custom sesuai kebutuhan bisnis Anda",
     features: [
-      "Dashboard Next.js + Supabase",
-      "Autentikasi NextAuth role-based",
-      "Audit log & activity feed",
-      "Integrasi API pihak ketiga",
+      "Analisa Kebutuhan Bisnis",
+      "Custom Design Premium",
+      "Custom Development",
+      "Database Design",
+      "API Integration",
+      "Payment Gateway",
+      "Advanced Security",
+      "High Performance Setup",
     ],
   },
 ];
@@ -166,8 +182,12 @@ const ghostButtonClasses =
 const eyebrowClasses = "text-[#25d3b8] text-[0.85rem] uppercase tracking-[0.25em] mb-3";
 
 const ListItem = ({ children }: { children: ReactNode }) => (
-  <li className="flex items-start gap-2 text-left text-[#aab1c9]">
-    <span className="leading-6 text-[#25d3b8]">•</span>
+  <li className="flex items-start gap-3 text-left text-[#aab1c9]">
+    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#1b2a22]">
+      <svg className="h-3.5 w-3.5 text-[#25d3b8]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.2 7.2a1 1 0 01-1.415 0l-3.1-3.1a1 1 0 111.415-1.415l2.392 2.392 6.492-6.492a1 1 0 011.416 0z" clipRule="evenodd" />
+      </svg>
+    </span>
     <span>{children}</span>
   </li>
 );
@@ -315,24 +335,34 @@ export default function HomePage() {
             Paket harga fleksibel sesuai tujuan kampanye Anda.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,_1fr))]">
+        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,_1fr))]">
           {pricingPlans.map((plan) => (
             <article
               key={plan.title}
-              className={`${cardClasses} flex flex-col gap-4 ${
-                plan.highlighted ? "border-[#7f5bff] shadow-[0_0_30px_rgba(127,91,255,0.3)]" : ""
+              className={`${cardClasses} relative flex flex-col gap-4 ${
+                plan.highlighted
+                  ? "border-[#7f5bff] shadow-[0_12px_40px_rgba(127,91,255,0.35)]"
+                  : ""
               }`}
             >
-              <p className="text-sm text-[#25d3b8]">{plan.idealFor}</p>
+              {plan.highlighted && plan.badge && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#7f5bff] px-3 py-1 text-xs font-semibold text-white shadow-[0_6px_16px_rgba(127,91,255,0.5)]">
+                  {plan.badge}
+                </span>
+              )}
               <h3 className="text-xl font-semibold">{plan.title}</h3>
-              <p className="text-[2rem] font-semibold">{plan.price}</p>
-              <ul className="flex flex-col gap-2">
+              <p className="text-sm text-[#aab1c9]">{plan.idealFor}</p>
+              <div className="mt-1">
+                <div className="text-[2rem] font-semibold">{plan.price}</div>
+                {plan.subtitle && <div className="text-sm text-[#aab1c9]">{plan.subtitle}</div>}
+              </div>
+              <ul className="mt-1 flex flex-col gap-2">
                 {plan.features.map((feature) => (
                   <ListItem key={feature}>{feature}</ListItem>
                 ))}
               </ul>
               <a className={primaryButtonClasses} href="#kontak">
-                Konsultasi paket
+                Pilih Paket
               </a>
             </article>
           ))}

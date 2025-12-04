@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Geist_Mono, Sora } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbars/Navbar";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -29,7 +30,10 @@ export default function RootLayout({
       <body
         className={`${sora.className} ${geistMono.variable} antialiased bg-[#070815] text-[#f5f6ff]`}
       >
-        {children}
+        <div>
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
