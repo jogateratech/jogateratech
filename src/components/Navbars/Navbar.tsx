@@ -1,4 +1,3 @@
-// src/components/Navbars/Navbar.tsx
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../assets/logo/logo-jogateratech.png";
@@ -12,8 +11,8 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[#070815]/65">
-      <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-[clamp(1.5rem,5vw,6rem)] py-3">
+    <header className="sticky top-0 z-50 backdrop-blur-md supports-backdrop-filter:bg-[#070815]/65">
+      <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-[clamp(1.5rem,5vw,6rem)]">
         <Link href="#beranda" className="inline-flex items-center gap-2">
           <Image
             src={logo}
@@ -23,7 +22,6 @@ export const Navbar = () => {
             className="h-20 w-full rounded-md"
             priority
           />
-          {/* <span className="text-sm font-semibold tracking-[0.06em]">JogaTera Tech</span> */}
         </Link>
 
         <ul className="hidden items-center gap-6 md:flex">
@@ -39,7 +37,6 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile simple menu (anchor list) */}
         <div className="md:hidden">
           <details className="group relative">
             <summary className="list-none cursor-pointer rounded-lg border border-white/10 px-3 py-2 text-sm text-[#aab1c9] transition hover:text-white">

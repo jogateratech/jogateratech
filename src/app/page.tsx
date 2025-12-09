@@ -1,207 +1,34 @@
-import type { ReactNode } from "react";
-
-const heroStats = [
-  { label: "Project sukses", value: "120+" },
-  { label: "Retainer aktif", value: "8" },
-  { label: "Kepuasan klien", value: "4.9/5" },
-];
-
-const services = [
-  {
-    title: "Landing Page & Microsite",
-    description:
-      "Konversi pengunjung dari kampanye Google Ads dan sosial media dengan narasi yang ditulis khusus brand Anda.",
-    deliverables: ["Copywriting & desain responsif", "Integrasi analitik & pixel", "Optimasi SEO dasar"],
-  },
-  {
-    title: "Company Profile Dinamis",
-    description:
-      "Web company profile modern dengan CMS ringan untuk mengelola konten dan menampilkan portofolio secara elegan.",
-    deliverables: ["Integrasi Supabase CMS", "Form kontak multi-channel", "Galeri portofolio"],
-  },
-  {
-    title: "Aplikasi CRUD Bisnis",
-    description:
-      "Digitalisasi operasional melalui dashboard kustom, manajemen inventori, dan automasi approval berbasis Next.js.",
-    deliverables: ["Autentikasi NextAuth", "Database real-time", "Audit trail & role"],
-  },
-];
-
-const pillars = [
-  {
-    title: "Tagline",
-    description: "Precision-crafted websites to turn clicks into loyal clients.",
-  },
-  {
-    title: "Visi",
-    description:
-      "Menjadi studio teknologi pilihan UMKM dan startup di Yogyakarta untuk mengubah ide bisnis menjadi pengalaman digital kelas enterprise.",
-  },
-  {
-    title: "Misi",
-    description:
-      "Mendisain funnel digital yang terukur, membangun fondasi teknis yang aman, dan mendampingi klien sampai go-live serta optimasi pasca peluncuran.",
-  },
-];
-
-const techStack = [
-  "TypeScript",
-  "Next.js",
-  "React Server Components",
-  "NextAuth.js",
-  "Supabase",
-  "PlanetScale / PostgreSQL",
-  "Tailwind / CSS Modules",
-  "Vercel Edge",
-  "Google Cloud",
-];
-
-const processSteps = [
-  {
-    title: "Discovery & Strategy",
-    detail: "Workshop 90 menit untuk memahami persona, funnel, serta KPI kampanye.",
-  },
-  {
-    title: "UX Writing & Wireframe",
-    detail: "Membuat outline konten, CTA, dan structure layout sebelum bergerak ke UI.",
-  },
-  {
-    title: "Development & QA",
-    detail: "Implementasi Next.js + Supabase, otomatisasi deployment, dan pengujian lintas device.",
-  },
-  {
-    title: "Launch & Optimization",
-    detail: "Integrasi analitik, heatmap, A/B testing ringan, serta laporan kinerja mingguan.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "JogaTera membantu kami turunkan CPL sebesar 37% hanya tiga minggu setelah landing page baru live.",
-    author: "Risa, Growth Lead Kopi Rasa",
-  },
-  {
-    quote:
-      "Dashboard CRUD stok gudang mereka langsung mengefisiensikan proses kami 2x lipat. Dokumentasi sangat rapi.",
-    author: "Haryo, COO Aksa Living",
-  },
-  {
-    quote:
-      "Support pasca launching responsif, setiap request baru bisa cepat dianalisis plus diberi insight marketing.",
-    author: "Tania, Owner Seruni Craft",
-  },
-];
-
-const pricingPlans = [
-  {
-    title: "Landing Page",
-    price: "Rp 699K",
-    subtitle: "one-time",
-    idealFor: "Solusi website landing page profesional untuk bisnis Anda",
-    features: [
-      "Desain Modern & Responsif",
-      "Optimasi SEO On-Page",
-      "Form Contact & WhatsApp",
-      "Integrasi Google Analytics",
-      "Integrasi Social Media",
-      "SSL Security (HTTPS)",
-      "Speed Optimization",
-      "Free Domain .com",
-    ],
-  },
-  {
-    title: "Company Profile",
-    price: "Rp 1.999K",
-    subtitle: "one-time",
-    idealFor: "Website company profile lengkap untuk perusahaan",
-    features: [
-      "Desain Premium & Responsif",
-      "Full SEO Optimization",
-      "CMS Admin Panel",
-      "Blog/News System",
-      "Form Contact & WhatsApp",
-      "Google Maps Integration",
-      "Google Analytics & Search Console",
-      "Social Media Integration",
-    ],
-    highlighted: true,
-    badge: "MOST POPULAR",
-  },
-  {
-    title: "Custom Website",
-    price: "Rp 2.999K",
-    subtitle: "starts from",
-    idealFor: "Solusi website custom sesuai kebutuhan bisnis Anda",
-    features: [
-      "Analisa Kebutuhan Bisnis",
-      "Custom Design Premium",
-      "Custom Development",
-      "Database Design",
-      "API Integration",
-      "Payment Gateway",
-      "Advanced Security",
-      "High Performance Setup",
-    ],
-  },
-];
-
-const developerProfile = {
-  name: "Aldi Pramudia",
-  title: "Principal Engineer & Founder",
-  summary:
-    "5+ tahun membangun produk SaaS, marketing site performa tinggi, dan sistem internal untuk startup Asia Tenggara.",
-  highlights: [
-    "Ex-Lead Frontend di studio YC-backed",
-    "Certified Google Analytics & Meta Ads",
-    "Kontributor open-source NextAuth",
-  ],
-};
-
-const contactInfo = {
-  email: "hello@jogatera.tech",
-  phone: "+62 812-0000-4321",
-  location: "Yogyakarta, Indonesia",
-};
-
-const heroBackgroundStyle = {
-  background:
-    "radial-gradient(circle at top left, rgba(127, 91, 255, 0.45), transparent 60%), radial-gradient(circle at top right, rgba(37, 211, 184, 0.35), transparent 45%), #0f1025",
-};
-
-const sectionClasses =
-  "w-full max-w-[1200px] mx-auto flex flex-col gap-8 py-[clamp(0.5rem,1.5vw,1.5rem)]";
-const cardClasses =
-  "bg-[#12132c] border border-white/10 rounded-[1.25rem] p-6 shadow-[0_20px_45px_rgba(0,0,0,0.2)]";
-const buttonBaseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition duration-200";
-const primaryButtonClasses =
-  `${buttonBaseClasses} bg-[#7f5bff] text-white border border-transparent hover:-translate-y-0.5 hover:opacity-95`;
-const ghostButtonClasses =
-  `${buttonBaseClasses} bg-transparent text-white border border-white/30 hover:-translate-y-0.5 hover:opacity-95`;
-const eyebrowClasses = "text-[#25d3b8] text-[0.85rem] uppercase tracking-[0.25em] mb-3";
-
-const ListItem = ({ children }: { children: ReactNode }) => (
-  <li className="flex items-start gap-3 text-left text-[#aab1c9]">
-    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#1b2a22]">
-      <svg className="h-3.5 w-3.5 text-[#25d3b8]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.415l-7.2 7.2a1 1 0 01-1.415 0l-3.1-3.1a1 1 0 111.415-1.415l2.392 2.392 6.492-6.492a1 1 0 011.416 0z" clipRule="evenodd" />
-      </svg>
-    </span>
-    <span>{children}</span>
-  </li>
-);
+import ListItem from "@/components/shared/list";
+import { contactInfo } from "@/constants/data-array/contact-info";
+import { developerProfile } from "@/constants/data-array/developer-profile";
+import { heroStats } from "@/constants/data-array/hero-stats";
+import { pillars } from "@/constants/data-array/pillars";
+import { pricingPlans } from "@/constants/data-array/princing";
+import { processSteps } from "@/constants/data-array/process-step";
+import { servicesMenu } from "@/constants/data-array/service";
+import { techStack } from "@/constants/data-array/teck-stack";
+import { testimonials } from "@/constants/data-array/testimony";
+import {
+  cardClasses,
+  eyebrowClasses,
+  ghostButtonClasses,
+  heroBackgroundStyle,
+  primaryButtonClasses,
+  sectionClasses,
+} from "@/helpers/config/index.config";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col gap-[clamp(3.5rem,6vw,6.5rem)] px-[clamp(1.5rem,5vw,6rem)] pb-16 pt-8 text-[#f5f6ff]">
       <header
-        className="w-full max-w-[1200px] mx-auto rounded-[2rem] border border-white/10 px-[clamp(1.5rem,4vw,4rem)] py-10"
+        className="w-full max-w-[1200px] mx-auto rounded-4xl border border-white/10 px-[clamp(1.5rem,4vw,4rem)] py-10"
         id="beranda"
         style={heroBackgroundStyle}
       >
         <nav className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="text-xl font-bold tracking-[0.08em]">JogaTera Tech</div>
+          <div className="text-xl font-bold tracking-[0.08em]">
+            JogaTera Tech
+          </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a href="#pricing" className={ghostButtonClasses}>
               Paket Harga
@@ -212,12 +39,17 @@ export default function HomePage() {
           </div>
         </nav>
         <div className="max-w-[720px]">
-          <p className={eyebrowClasses}>Studio pengembangan website berbasis data</p>
+          <p className={eyebrowClasses}>
+            Studio pengembangan website berbasis data
+          </p>
           <h1 className="mb-4 text-[clamp(2.6rem,4vw,3.8rem)] font-semibold leading-tight">
-            Bangun funnel digital yang siap scaling sejak hari pertama kampanye berjalan.
+            Bangun funnel digital yang siap scaling sejak hari pertama kampanye
+            berjalan.
           </h1>
           <p className="mb-6 text-lg text-[#aab1c9]">
-            JogaTera Tech mendesain landing page dan aplikasi web yang hyper-focused terhadap konversi, siap diintegrasikan dengan Supabase, NextAuth, dan stack modern lainnya.
+            JogaTera Tech mendesain landing page dan aplikasi web yang
+            hyper-focused terhadap konversi, siap diintegrasikan dengan
+            Supabase, NextAuth, dan stack modern lainnya.
           </p>
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
             <a className={primaryButtonClasses} href="#kontak">
@@ -227,7 +59,7 @@ export default function HomePage() {
               Lihat Layanan
             </a>
           </div>
-          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(140px,_1fr))]">
+          <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))]">
             {heroStats.map((stat) => (
               <div key={stat.label}>
                 <div className="text-[2rem] font-semibold">{stat.value}</div>
@@ -245,7 +77,7 @@ export default function HomePage() {
             Fokus pada cerita brand, ditenagai teknologi enterprise.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(220px,_1fr))]">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
           {pillars.map((pillar) => (
             <article key={pillar.title} className={cardClasses}>
               <h3 className="mb-2 text-xl font-semibold">{pillar.title}</h3>
@@ -262,9 +94,12 @@ export default function HomePage() {
             Layanan end-to-end dari ide hingga go-live.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,_1fr))]">
-          {services.map((service) => (
-            <article key={service.title} className={`${cardClasses} flex flex-col gap-4`}>
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+          {servicesMenu.map((service) => (
+            <article
+              key={service.title}
+              className={`${cardClasses} flex flex-col gap-4`}
+            >
               <h3 className="text-xl font-semibold">{service.title}</h3>
               <p className="text-[#aab1c9]">{service.description}</p>
               <ul className="mt-2 flex flex-col gap-2">
@@ -284,10 +119,15 @@ export default function HomePage() {
             Workshop strategis, iterasi cepat, peluncuran terukur.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(220px,_1fr))]">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
           {processSteps.map((step, index) => (
-            <article key={step.title} className={`${cardClasses} flex flex-col gap-2`}>
-              <div className="text-sm font-medium text-[#25d3b8]">0{index + 1}</div>
+            <article
+              key={step.title}
+              className={`${cardClasses} flex flex-col gap-2`}
+            >
+              <div className="text-sm font-medium text-[#25d3b8]">
+                0{index + 1}
+              </div>
               <h3 className="text-xl font-semibold">{step.title}</h3>
               <p className="text-[#aab1c9]">{step.detail}</p>
             </article>
@@ -304,7 +144,10 @@ export default function HomePage() {
         </div>
         <div className="flex flex-wrap gap-3">
           {techStack.map((tech) => (
-            <span key={tech} className="rounded-full border border-white/10 px-4 py-2 text-sm text-[#aab1c9]">
+            <span
+              key={tech}
+              className="rounded-full border border-white/10 px-4 py-2 text-sm text-[#aab1c9]"
+            >
               {tech}
             </span>
           ))}
@@ -318,10 +161,15 @@ export default function HomePage() {
             Bisnis yang tumbuh bersama JogaTera Tech.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,_1fr))]">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
           {testimonials.map((testimonial) => (
-            <article key={testimonial.author} className={`${cardClasses} flex flex-col gap-3`}>
-              <p className="text-lg italic text-[#fdfdff]">“{testimonial.quote}”</p>
+            <article
+              key={testimonial.author}
+              className={`${cardClasses} flex flex-col gap-3`}
+            >
+              <p className="text-lg italic text-[#fdfdff]">
+                “{testimonial.quote}”
+              </p>
               <p className="text-[#aab1c9]">{testimonial.author}</p>
             </article>
           ))}
@@ -335,7 +183,7 @@ export default function HomePage() {
             Paket harga fleksibel sesuai tujuan kampanye Anda.
           </h2>
         </div>
-        <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,_1fr))]">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
           {pricingPlans.map((plan) => (
             <article
               key={plan.title}
@@ -354,7 +202,9 @@ export default function HomePage() {
               <p className="text-sm text-[#aab1c9]">{plan.idealFor}</p>
               <div className="mt-1">
                 <div className="text-[2rem] font-semibold">{plan.price}</div>
-                {plan.subtitle && <div className="text-sm text-[#aab1c9]">{plan.subtitle}</div>}
+                {plan.subtitle && (
+                  <div className="text-sm text-[#aab1c9]">{plan.subtitle}</div>
+                )}
               </div>
               <ul className="mt-1 flex flex-col gap-2">
                 {plan.features.map((feature) => (
@@ -389,13 +239,17 @@ export default function HomePage() {
       </section>
 
       <section
-        className="w-full max-w-[1200px] mx-auto flex flex-col gap-6 rounded-[1.5rem] px-[clamp(1.5rem,4vw,4rem)] py-8 text-white md:flex-row md:items-center md:justify-between"
-        style={{ background: "linear-gradient(130deg,#7f5bff 0%,#5b35f0 50%,#25d3b8 100%)" }}
+        className="w-full max-w-[1200px] mx-auto flex flex-col gap-6 rounded-3xl px-[clamp(1.5rem,4vw,4rem)] py-8 text-white md:flex-row md:items-center md:justify-between"
+        style={{
+          background:
+            "linear-gradient(130deg,#7f5bff 0%,#5b35f0 50%,#25d3b8 100%)",
+        }}
       >
         <div className="space-y-4">
           <p className={eyebrowClasses}>Siap mulai?</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
-            Mulai dari audit landing page, redesign funnel, sampai sistem internal—semuanya ready.
+            Mulai dari audit landing page, redesign funnel, sampai sistem
+            internal—semuanya ready.
           </h2>
         </div>
         <a className={primaryButtonClasses} href="#kontak">
@@ -410,16 +264,19 @@ export default function HomePage() {
             Agenda call 20 menit untuk memetakan kebutuhan Anda.
           </h2>
         </div>
-        <div className="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(280px,_1fr))]">
+        <div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
           <div className="space-y-3 text-[#aab1c9]">
             <p>
-              Email: {" "}
-              <a className="text-white underline decoration-[#25d3b8]/40 hover:decoration-[#25d3b8]" href="mailto:hello@jogatera.tech">
+              Email:{" "}
+              <a
+                className="text-white underline decoration-[#25d3b8]/40 hover:decoration-[#25d3b8]"
+                href="mailto:hello@jogatera.tech"
+              >
                 {contactInfo.email}
               </a>
             </p>
             <p>
-              WhatsApp: {" "}
+              WhatsApp:{" "}
               <a
                 className="text-white underline decoration-[#25d3b8]/40 hover:decoration-[#25d3b8]"
                 href="https://wa.me/6281200004321"
@@ -434,7 +291,7 @@ export default function HomePage() {
               <label className="flex flex-col gap-2 text-sm">
                 Nama
                 <input
-                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline focus:outline-2 focus:outline-[#7f5bff]"
+                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline-2 focus:outline-[#7f5bff]"
                   type="text"
                   placeholder="Nama Anda"
                   required
@@ -443,7 +300,7 @@ export default function HomePage() {
               <label className="flex flex-col gap-2 text-sm">
                 Email/WhatsApp
                 <input
-                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline focus:outline-2 focus:outline-[#7f5bff]"
+                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline-2 focus:outline-[#7f5bff]"
                   type="text"
                   placeholder="Kontak yang bisa dihubungi"
                   required
@@ -452,7 +309,7 @@ export default function HomePage() {
               <label className="flex flex-col gap-2 text-sm">
                 Ceritakan kebutuhan singkat
                 <textarea
-                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline focus:outline-2 focus:outline-[#7f5bff]"
+                  className="rounded-[0.8rem] border border-white/20 bg-white/5 px-4 py-3 text-white focus:outline-2 focus:outline-[#7f5bff]"
                   placeholder="Landing page ads, aplikasi CRM, dsb"
                   rows={4}
                   required
@@ -469,14 +326,17 @@ export default function HomePage() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.229342611751!2d110.367083!3d-7.815915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5785cfdf2d5f%3A0x2c52f05baa09ddfb!2sYogyakarta!5e0!3m2!1sen!2sid!4v1716400000000!5m2!1sen!2sid"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="min-h-[320px] w-full rounded-[1.25rem] border-0"
+              className="min-h-80 w-full rounded-[1.25rem] border-0"
             />
           </div>
         </div>
       </section>
 
       <footer className="w-full max-w-[1200px] mx-auto pb-8 text-center text-sm text-[#aab1c9]">
-        <p>© {new Date().getFullYear()} JogaTera Tech. Crafted with Next.js, Supabase, dan NextAuth.</p>
+        <p>
+          © {new Date().getFullYear()} JogaTera Tech. Crafted with Next.js,
+          Supabase, dan NextAuth.
+        </p>
       </footer>
     </main>
   );
