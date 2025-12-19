@@ -2,12 +2,12 @@ export const pillars = [
   {
     title: "Tagline",
     description:
-      "Precision-crafted websites to turn clicks into loyal clients.",
+      "Situs web yang dibuat dengan presisi untuk mengubah klik menjadi klien setia.",
   },
   {
     title: "Visi",
     description:
-      "Menjadi studio teknologi pilihan UMKM dan startup di Yogyakarta untuk mengubah ide bisnis menjadi pengalaman digital kelas enterprise.",
+      "Menjadi studio teknologi pilihan UMKM dan startup di Indonesia untuk mengubah ide bisnis menjadi pengalaman digital kelas enterprise.",
   },
   {
     title: "Misi",

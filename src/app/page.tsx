@@ -1,6 +1,5 @@
 import ListItem from "@/components/shared/list";
 import { contactInfo } from "@/constants/data-array/contact-info";
-import { developerProfile } from "@/constants/data-array/developer-profile";
 import { heroStats } from "@/constants/data-array/hero-stats";
 import { pillars } from "@/constants/data-array/pillars";
 import { pricingPlans } from "@/constants/data-array/princing";
@@ -12,7 +11,6 @@ import {
   cardClasses,
   eyebrowClasses,
   ghostButtonClasses,
-  heroBackgroundStyle,
   primaryButtonClasses,
   sectionClasses,
 } from "@/helpers/config/index.config";
@@ -21,20 +19,16 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col gap-[clamp(3.5rem,6vw,6.5rem)] px-[clamp(1.5rem,5vw,6rem)] pb-16 pt-8 text-[#f5f6ff]">
       <header
-        className="w-full max-w-[1200px] mx-auto rounded-4xl border border-white/10 px-[clamp(1.5rem,4vw,4rem)] py-10"
+        className="w-full scroll-mt-28 max-w-[1200px] mx-auto   px-[clamp(1.5rem,4vw,4rem)] py-10"
         id="beranda"
-        style={heroBackgroundStyle}
       >
         <nav className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="text-xl font-bold tracking-[0.08em]">
             JogaTera Tech
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <a href="#pricing" className={ghostButtonClasses}>
+            <a href="#pricing" className={primaryButtonClasses}>
               Paket Harga
-            </a>
-            <a href="#kontak" className={primaryButtonClasses}>
-              Konsultasi Gratis
             </a>
           </div>
         </nav>
@@ -47,9 +41,9 @@ export default function HomePage() {
             berjalan.
           </h1>
           <p className="mb-6 text-lg text-[#aab1c9]">
-            JogaTera Tech mendesain landing page dan aplikasi web yang
-            hyper-focused terhadap konversi, siap diintegrasikan dengan
-            Supabase, NextAuth, dan stack modern lainnya.
+            JogaTera Tech mendesain landing page dan aplikasi web yang hyper
+            focused terhadap konversi, siap diintegrasikan dengan Supabase,
+            NextAuth, dan stack modern lainnya.
           </p>
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
             <a className={primaryButtonClasses} href="#kontak">
@@ -70,7 +64,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className={sectionClasses} id="tentang">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="tentang">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Kenapa JogaTera</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -87,7 +81,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={sectionClasses} id="layanan">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="layanan">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Solusi</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -112,7 +106,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={sectionClasses} id="proses">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="proses">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Cara kerja</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -135,7 +129,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={sectionClasses} id="stack">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="stack">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Stack teknologi</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -154,7 +148,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={sectionClasses} id="testimoni">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="testimoni">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Cerita klien</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -162,21 +156,20 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <article
-              key={testimonial.author}
+              key={index}
               className={`${cardClasses} flex flex-col gap-3`}
             >
               <p className="text-lg italic text-[#fdfdff]">
                 “{testimonial.quote}”
               </p>
-              <p className="text-[#aab1c9]">{testimonial.author}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className={sectionClasses} id="pricing">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="pricing">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Investasi</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
@@ -187,11 +180,22 @@ export default function HomePage() {
           {pricingPlans.map((plan) => (
             <article
               key={plan.title}
-              className={`${cardClasses} relative flex flex-col gap-4 ${
-                plan.highlighted
-                  ? "border-[#7f5bff] shadow-[0_12px_40px_rgba(127,91,255,0.35)]"
-                  : ""
-              }`}
+              className={`
+                  ${cardClasses}
+                  relative flex flex-col gap-4
+                  transition-all duration-300 ease-out
+                   hover:shadow-[0_16px_50px_rgba(0,0,0,0.45)]
+                  ${
+                    plan.badge
+                      ? "-translate-y-4 border-[#7f5bff] shadow-[0_12px_40px_rgba(127,91,255,0.35)]"
+                      : "hover:-translate-y-2 hover:shadow-[0_16px_50px_rgba(0,0,0,0.45)]"
+                  }
+                `}
+              style={{
+                background:
+                  plan.badge &&
+                  "linear-gradient(130deg,#7f5bff 0%,#5b35f0 50%,#25d3b8 100%)",
+              }}
             >
               {plan.highlighted && plan.badge && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#7f5bff] px-3 py-1 text-xs font-semibold text-white shadow-[0_6px_16px_rgba(127,91,255,0.5)]">
@@ -219,25 +223,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={sectionClasses} id="profil">
-        <div className="max-w-[720px] space-y-4">
-          <p className={eyebrowClasses}>Tim inti</p>
-          <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
-            Developer yang akan langsung menangani proyek Anda.
-          </h2>
-        </div>
-        <div className={`${cardClasses} flex flex-col gap-4`}>
-          <h3 className="text-2xl font-semibold">{developerProfile.name}</h3>
-          <p className="text-[#aab1c9]">{developerProfile.title}</p>
-          <p className="text-[#aab1c9]">{developerProfile.summary}</p>
-          <ul className="flex flex-col gap-2">
-            {developerProfile.highlights.map((item) => (
-              <ListItem key={item}>{item}</ListItem>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section
         className="w-full max-w-[1200px] mx-auto flex flex-col gap-6 rounded-3xl px-[clamp(1.5rem,4vw,4rem)] py-8 text-white md:flex-row md:items-center md:justify-between"
         style={{
@@ -249,15 +234,12 @@ export default function HomePage() {
           <p className={eyebrowClasses}>Siap mulai?</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">
             Mulai dari audit landing page, redesign funnel, sampai sistem
-            internal—semuanya ready.
+            internal semuanya ready.
           </h2>
         </div>
-        <a className={primaryButtonClasses} href="#kontak">
-          Kirim brief Anda
-        </a>
       </section>
 
-      <section className={sectionClasses} id="kontak">
+      <section className={`scroll-mt-28 ${sectionClasses}`} id="kontak">
         <div className="max-w-[720px] space-y-4">
           <p className={eyebrowClasses}>Hubungi kami</p>
           <h2 className="text-[clamp(2rem,3vw,2.8rem)] font-semibold leading-tight">

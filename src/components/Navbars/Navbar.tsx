@@ -6,6 +6,7 @@ export const Navbar = () => {
   const navItems = [
     { label: "Beranda", href: "#beranda" },
     { label: "Tentang Kami", href: "#tentang" },
+    { label: "Pricing", href: "#pricing" },
     { label: "Layanan", href: "#layanan" },
     { label: "Kontak", href: "#kontak" },
   ];

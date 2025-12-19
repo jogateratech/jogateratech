@@ -1,5 +1,5 @@
 export const contactInfo = {
-  email: "hello@jogatera.tech",
-  phone: "+62 812-0000-4321",
+  email: "jogateratech@gmail.com",
+  phone: "+62 882-3224-0609",
   location: "Yogyakarta, Indonesia",
 };
